@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git Branches Notes</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f9;
+        color: #333;
+      }
+      h1,
+      h2 {
+        color: #2c3e50;
+      }
+      code {
+        background: #f4f4f4;
+        padding: 2px 5px;
+        color: black;
+        border-radius: 4px;
+        font-family: Consolas, monospace;
+      }
+      pre {
+        background: #272822;
+        color: #f8f8f2;
+        padding: 10px;
+        border-radius: 8px;
+        overflow-x: auto;
+      }
+      ul {
+        margin: 10px 0;
+        padding-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>All About Branches in Git</h1>
+
+    <h2>Definition</h2>
+    <p>
+      A branch in Git is a lightweight, movable pointer to a commit. Branches
+      allow you to work on different features or fixes simultaneously without
+      affecting the main codebase. The default branch in Git is typically called
+      <code>main</code> or <code>master</code>.
+    </p>
+
+    <h2>Commands</h2>
+
+    <h3>1. Create a New Branch</h3>
+    <pre><code>git branch branch_name</code></pre>
+
+    <h3>2. List All Branches</h3>
+    <pre><code>git branch</code></pre>
+    <p>
+      Use <code>git branch -a</code> to list all branches, including remote
+      branches.
+    </p>
+
+    <h3>3. Switch to a Branch</h3>
+    <pre><code>git checkout branch_name</code></pre>
+    <p>Alternatively, in modern Git versions, use:</p>
+    <pre><code>git switch branch_name</code></pre>
+
+    <h3>4. Create and Switch to a New Branch</h3>
+    <pre><code>git checkout -b branch_name</code></pre>
+    <p>Or, use:</p>
+    <pre><code>git switch -c branch_name</code></pre>
+
+    <h3>5. Merge a Branch</h3>
+    <pre><code>git merge branch_name</code></pre>
+    <p>This command merges the specified branch into the current branch.</p>
+
+    <h3>6. Delete a Branch</h3>
+    <pre><code>git branch -d branch_name</code></pre>
+    <p>
+      Use <code>git branch -D branch_name</code> to forcefully delete a branch.
+    </p>
+
+    <h3>7. Push a Branch to Remote</h3>
+    <pre><code>git push origin branch_name</code></pre>
+
+    <h3>8. Delete a Remote Branch</h3>
+    <pre><code>git push origin --delete branch_name</code></pre>
+
+    <h2>Example</h2>
+    <p>
+      Here is an example workflow to demonstrate the use of branches in Git:
+    </p>
+
+    <ol>
+      <li>Create and switch to a new branch:</li>
+      <pre><code>git checkout -b feature-login</code></pre>
+
+      <li>Make changes and commit them:</li>
+      <pre><code>git add .
+git commit -m "Add login feature"</code></pre>
+
+      <li>Switch back to the main branch:</li>
+      <pre><code>git checkout main</code></pre>
+
+      <li>
+        Merge the <code>feature-login</code> branch into <code>main</code>:
+      </li>
+      <pre><code>git merge feature-login</code></pre>
+
+      <li>Delete the <code>feature-login</code> branch:</li>
+      <pre><code>git branch -d feature-login</code></pre>
+    </ol>
+
+    <h2>Tips</h2>
+    <ul>
+      <li>
+        Keep your branches small and focused to make them easier to manage.
+      </li>
+      <li>
+        Always pull the latest changes before creating a new branch to avoid
+        merge conflicts later.
+      </li>
+      <li>
+        Use descriptive names for branches, such as <code>feature-xyz</code> or
+        <code>bugfix-abc</code>.
+      </li>
+    </ul>
+  </body>
+</html>
